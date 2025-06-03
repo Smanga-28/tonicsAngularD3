@@ -1,38 +1,85 @@
 # European Countries Circle Packing Visualization
 
-An interactive Angular application with D3.js integration that visualizes European countries using circle packing layout. Countries are grouped by region and sized according to configurable criteria (population or land area).
+An **interactive Angular application** with **D3.js integration** that visualizes European countries using a dynamic circle packing layout. Countries are grouped by region and sized based on configurable criteria such as population or land area.
 
-## Features
+---
 
-- **Interactive Circle Packing Visualization**: Countries displayed as circles grouped by European regions
-- **Configurable Sizing**: Toggle between population and land area for circle sizing
-- **Responsive Design**: Adapts to different screen sizes and devices
-- **Country Details**: Click any country to view detailed information in a side drawer
-- **Real-time Data**: Uses authentic country data including population, land area, flags, and Wikipedia links
-- **Smooth Animations**: Fluid transitions and hover effects for enhanced user experience
-- **Accessibility**: ARIA labels and keyboard navigation support
+## 🚀 Features
 
-## Technology Stack
+- **Interactive Circle Packing Visualization**  
+  Countries appear as circles clustered by European regions, offering an intuitive geographic and demographic overview.
 
-- **Angular** (Latest) - Application framework
-- **TypeScript** - Type-safe development
-- **D3.js v7** - Data visualization and circle packing
-- **SCSS** - Advanced styling with variables and mixins
-- **RxJS** - Reactive data management
-- **Google Fonts** - Inter font family for modern typography
+- **Configurable Sizing**  
+  Toggle between **population** and **land area** to adjust circle sizes and gain multiple perspectives on the data.
 
-## Getting Started
+- **Responsive Design**  
+  Fully responsive UI adapts seamlessly across desktops, tablets, and mobile devices.
+
+- **Country Details Panel**  
+  Click any country to open a side drawer with detailed info: population, land area, flag, and a direct link to the country’s Wikipedia page.
+
+- **Real-time Data Integration**  
+  Uses up-to-date, authentic data sources for accuracy in population figures, land areas, flags, and external links.
+
+- **Smooth Animations & Transitions**  
+  Fluid hover effects and animations enhance the user experience and engagement.
+
+- **Accessibility Support**  
+  Includes ARIA labels, keyboard navigation, and screen reader compatibility for inclusive usability.
+
+---
+
+## 🛠 Technology Stack
+
+- **Angular (Latest)** — Scalable and maintainable frontend framework  
+- **TypeScript** — Static typing with advanced development features  
+- **D3.js v7** — Powerful, customizable data visualizations  
+- **SCSS** — CSS preprocessor for cleaner and modular stylesheets  
+- **RxJS** — Reactive programming for managing asynchronous data/events  
+- **Google Fonts (Inter)** — Modern, legible typography enhancing UI aesthetics  
+
+---
+
+## ⚙️ Getting Started
 
 ### Prerequisites
 
-- Node.js (v16 or higher)
-- npm (v7 or higher)
-- Angular CLI (latest)
+Ensure you have the following installed:
 
-### Installation
+- **Node.js** (v16 or higher recommended)  
+- **npm** (bundled with Node.js, v7 or higher recommended)  
+- **Angular CLI** (latest version)  
 
-1. **Clone or extract the project files**
-   ```bash
-   # If you have the project files, navigate to the project directory
-   cd european-countries-viz
-   
+### Dependencies Installation
+Run in on terminal:
+npm install
+
+### Running Locally
+ng serve
+
+
+📂 Project Structure
+ITONICANGULARD3/
+├── src/
+│   ├── app/
+│   │   ├── components/        # Angular components (visualization, side panel)
+│   │   ├── services/          # Data fetching & management
+│   │   ├── styles/            # Global and component SCSS files
+│   │   └── app.module.ts      # Root Angular module
+│   ├── assets/                # Static assets (flags, icons)
+│   └── index.html             # Main HTML template
+├── angular.json               # Angular CLI configuration
+├── package.json               # NPM dependencies and scripts
+└── README.md                  # Project documentation
+
+
+👤 Author
+Smangaliso Ntshangase
+Full Stack Developer & Data Visualization Enthusiast
+**GitHub**: smangalisontshangase
+**LinkedIn**: [smangaliso-ntshangase(https://www.linkedin.com/in/smangaliso-nkanyezi-ntshangase-b02b3a168/)
+
+🤝 Contribution
+### Contributions are welcome! Feel free to:
+Open issues.
+Submit pull requests for new features, bug fixes, or optimizations.
