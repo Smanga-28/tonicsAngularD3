@@ -1,0 +1,112 @@
+<div class="drawer" [class.open]="isOpen">
+  <div class="drawer-header">
+    <h2>{{ country?.country || 'Country Details' }}</h2>
+    <button class="close-btn" (click)="closeDrawer()" aria-label="Close drawer">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  <div class="drawer-content" *ngIf="country">
+    <!-- Country Flag -->
+    <div class="flag-section">
+      <div class="flag-container">
+        <img 
+          
+          [src]="country.flag" 
+          [alt]="country.country + ' flag'"
+          (error)="onFlagImageError()"
+          class="flag-image">
+        <div *ngIf="flagImageError || !country.flag" class="flag-placeholder">
+          <svg width="60" height="40" viewBox="0 0 60 40" fill="none">
+            <rect width="60" height="40" fill="#e0e0e0" stroke="#ccc"/>
+            <text x="30" y="25" text-anchor="middle" font-size="8" fill="#666">FLAG</text>
+          </svg>
+        </div>
+      </div>
+      <div class="country-info">
+        <h3>{{ country.country }}</h3>
+        <p class="region">{{ country.region }}, {{ country.continent }}</p>
+      </div>
+    </div>
+
+    <!-- Statistics -->
+    <div class="stats-section">
+      <h4>Statistics</h4>
+      
+      <div class="stat-grid">
+        <div class="stat-item">
+          <div class="stat-icon">👥</div>
+          <div class="stat-content">
+            <span class="stat-label">Population</span>
+            <span class="stat-value">{{ formatNumber(country.population) }}</span>
+            <span class="stat-category">{{ getPopulationCategory() }}</span>
+          </div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon">🗺️</div>
+          <div class="stat-content">
+            <span class="stat-label">Land Area</span>
+            <span class="stat-value">{{ formatNumber(country.land_area_km2) }} km²</span>
+            <span class="stat-category">{{ getSizeCategory() }}</span>
+          </div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon">📍</div>
+          <div class="stat-content">
+            <span class="stat-label">Population Density</span>
+            <span class="stat-value">{{ formatNumber(getPopulationDensity()) }} /km²</span>
+            <span class="stat-category">{{ getPopulationDensity() > 100 ? 'Dense' : 'Sparse' }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Facts -->
+    <div class="facts-section">
+      <h4>Quick Facts</h4>
+      <div class="facts-list">
+        <div class="fact-item">
+          <span class="fact-label">Region:</span>
+          <span class="fact-value">{{ country.region }}</span>
+        </div>
+        <div class="fact-item">
+          <span class="fact-label">Continent:</span>
+          <span class="fact-value">{{ country.continent }}</span>
+        </div>
+        <div class="fact-item">
+          <span class="fact-label">Size Category:</span>
+          <span class="fact-value">{{ getSizeCategory() }}</span>
+        </div>
+        <div class="fact-item">
+          <span class="fact-label">Population Category:</span>
+          <span class="fact-value">{{ getPopulationCategory() }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wikipedia Link -->
+    <div class="actions-section">
+      <button 
+        *ngIf="country.wikipedia" 
+        (click)="openWikipedia()" 
+        class="wikipedia-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15,3 21,3 21,9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+        View on Wikipedia
+      </button>
+    </div>
+  </div>
+
+  <!-- Empty state -->
+  <div class="empty-state" *ngIf="!country && isOpen">
+    <p>No country selected</p>
+  </div>
+</div>

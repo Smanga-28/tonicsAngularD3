@@ -1,0 +1,9 @@
+<div class="circle-packing-container">
+  <div class="chart-container"></div>
+  
+  <!-- Instructions overlay -->
+  <div class="instructions" *ngIf="countries.length > 0">
+    <p>Click on any country circle to view detailed information</p>
+    <small>Hover to highlight • Size represents {{ sizingCriteria === 'population' ? 'population' : 'land area' }}</small>
+  </div>
+</div>

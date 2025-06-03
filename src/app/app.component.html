@@ -1,0 +1,96 @@
+<div class="app-container">
+  <!-- Header -->
+  <header class="header">
+    <h1>{{ title }}</h1>
+    
+    <!-- Controls -->
+    <div class="controls" *ngIf="!isLoading && !error">
+      <div class="sizing-toggle">
+        <label>Size countries by:</label>
+        <div class="toggle-buttons">
+          <button 
+            [class.active]="sizingCriteria === 'population'"
+            (click)="onSizingCriteriaChange('population')"
+            class="toggle-btn">
+            Population
+          </button>
+          <button 
+            [class.active]="sizingCriteria === 'land_area_km2'"
+            (click)="onSizingCriteriaChange('land_area_km2')"
+            class="toggle-btn">
+            Land Area
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content Container with Sidebar -->
+  <div class="content-wrapper">
+    <!-- Left Sidebar -->
+    <aside class="left-sidebar" *ngIf="!isLoading && !error">
+      <div class="sidebar-content">
+        <h3>Countries List</h3>
+        <div class="countries-list">
+          <div 
+            *ngFor="let country of countries" 
+            class="country-item"
+            (click)="onCountrySelected(country)"
+            [class.selected]="selectedCountry?.country === country.country">
+            <div class="country-info">
+              <div class="country-name">{{ country.country }}</div>
+              <div class="country-details">
+                <span class="region">{{ country.region }}</span>
+                <span class="population">{{ formatNumber(country.population) }}</span>
+              </div>
+            </div>
+            <div class="country-flag">
+              <img [src]="country.flag" [alt]="country.country + ' flag'" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Loading State -->
+      <div *ngIf="isLoading" class="loading-container">
+        <div class="spinner"></div>
+        <p>Loading country data...</p>
+      </div>
+
+      <!-- Error State -->
+      <div *ngIf="error" class="error-container">
+        <div class="error-message">
+          <h2>Oops! Something went wrong</h2>
+          <p>{{ error }}</p>
+          <button (click)="retryLoad()" class="retry-btn">Try Again</button>
+        </div>
+      </div>
+
+      <!-- Visualization -->
+      <div *ngIf="!isLoading && !error" class="visualization-container">
+        <app-circle-packing
+          [countries]="countries"
+          [sizingCriteria]="sizingCriteria"
+          (countrySelected)="onCountrySelected($event)">
+        </app-circle-packing>
+      </div>
+    </main>
+  </div>
+
+  <!-- Side Drawer -->
+  <app-country-drawer
+    [isOpen]="isDrawerOpen"
+    [country]="selectedCountry"
+    (closed)="onDrawerClose()">
+  </app-country-drawer>
+
+  <!-- Overlay for drawer -->
+  <div 
+    *ngIf="isDrawerOpen" 
+    class="drawer-overlay"
+    (click)="onDrawerClose()">
+  </div>
+</div>

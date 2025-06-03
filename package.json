@@ -1,0 +1,25 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "An interactive Angular application with D3.js integration that visualizes European countries using circle packing layout. Countries are grouped by region and sized according to configurable criteria (population or land area).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@angular-devkit/build-angular": "^19.2.14",
+    "@angular/cli": "^19.2.14",
+    "@angular/common": "^19.2.14",
+    "@angular/core": "^19.2.14",
+    "@angular/platform-browser": "^19.2.14",
+    "@angular/platform-browser-dynamic": "^19.2.14",
+    "@types/d3": "^7.4.3",
+    "d3": "^7.9.0",
+    "rxjs": "^7.8.2",
+    "typescript": "^5.8.3",
+    "zone.js": "^0.15.1"
+  }
+}
