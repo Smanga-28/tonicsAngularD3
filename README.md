@@ -51,35 +51,35 @@ Ensure you have the following installed:
 - **Angular CLI** (latest version)  
 
 ### Dependencies Installation
-Run in on terminal:
-npm install
+- Run in on terminal:
+- npm install
 
 ### Running Locally
-ng serve
+- ng serve
 
 
 📂 Project Structure
-ITONICANGULARD3/
-├── src/
-│   ├── app/
-│   │   ├── components/        # Angular components (visualization, side panel)
-│   │   ├── services/          # Data fetching & management
-│   │   ├── styles/            # Global and component SCSS files
-│   │   └── app.module.ts      # Root Angular module
-│   ├── assets/                # Static assets (flags, icons)
-│   └── index.html             # Main HTML template
-├── angular.json               # Angular CLI configuration
-├── package.json               # NPM dependencies and scripts
-└── README.md                  # Project documentation
+- ITONICANGULARD3/
+- ├── src/
+- │   ├── app/
+- │   │   ├── components/        # Angular components (visualization, side panel)
+- │   │   ├── services/          # Data fetching & management
+- │   ├── styles/            # Global and component SCSS files
+- │   │   └── app.module.ts      # Root Angular module
+- │   ├── assets/                # Static assets (flags, icons)
+- │   └── index.html             # Main HTML template
+- ├── angular.json               # Angular CLI configuration
+- ├── package.json               # NPM dependencies and scripts
+- └── README.md                  # Project documentation
 
 
-👤 Author
-Smangaliso Ntshangase
-Full Stack Developer & Data Visualization Enthusiast
-**GitHub**: smangalisontshangase
-**LinkedIn**: [smangaliso-ntshangase(https://www.linkedin.com/in/smangaliso-nkanyezi-ntshangase-b02b3a168/)
+## 👤 Author
+### Smangaliso Ntshangase
+### Full Stack Developer & Data Visualization Enthusiast
+- **GitHub**: smanga-28
+- **LinkedIn**: [smangaliso-ntshangase(https://www.linkedin.com/in/smangaliso-nkanyezi-ntshangase-b02b3a168/)
 
-🤝 Contribution
+## 🤝 Contribution
 ### Contributions are welcome! Feel free to:
-Open issues.
-Submit pull requests for new features, bug fixes, or optimizations.
+- Open issues.
+- Submit pull requests for new features, bug fixes, or optimizations.
